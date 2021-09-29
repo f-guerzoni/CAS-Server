@@ -219,6 +219,23 @@ services:
     networks:
       - default
 
+#KEYCLOAK
+  keycloak:
+    container_name: keycloak
+    image: 'jboss/keycloak:latest'
+    restart: unless-stopped
+    environment:
+      - PROXY_ADDRESS_FORWARDING=true
+      - DB_VENDOR=h2
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+    volumes:
+      - realm-config:/opt/jboss/keycloak/realm-config
+      - keycloak-db:/opt/jboss/keycloak/standalone/data
+    restart: always
+    networks:
+      - default
+
 volumes:
   # default dir on Ubuntu: /var/lib/docker/volumes
   logger_data:
@@ -246,3 +263,6 @@ volumes:
   mattermost_logs:
   mattermost_plugins:
   mattermost_client_plugins:
+  #keycloak
+  realm-config:
+  keycloak-db:
