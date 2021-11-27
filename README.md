@@ -1,4 +1,4 @@
-# CAS server
+# CAS server with Keycloak
 
 ## Installation
 - Simply run :
