@@ -15,8 +15,11 @@ Data | value
 user | admin
 password | admin
 
-####Install OIDC plugin
-Run sudo ./plugin_OIDC_sonarqube.sh
+#### Install OIDC plugin
+- Run :
+```bash
+$ sudo ./plugin_OIDC_sonarqube.sh
+```
 
 ### Gitlab
 
